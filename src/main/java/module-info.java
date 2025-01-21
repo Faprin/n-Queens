@@ -4,6 +4,6 @@ module com.example.problemareinas {
 
     requires org.kordamp.bootstrapfx.core;
 
-    opens com.example.problemareinas to javafx.fxml;
-    exports com.example.problemareinas;
+    opens com.Algoritmos to javafx.fxml;
+    exports com.Algoritmos;
 }
