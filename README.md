@@ -22,7 +22,7 @@ Una vez que el usuario introduce estos datos y hace clic en "Calcular", el progr
 
 1. **Clonar el repositorio**:
     ```bash
-    git clone <URL-del-repositorio>
+    git clone [<URL-del-repositorio>](https://github.com/Faprin/n-Queens)
     ```
 
 2. **Abrir el proyecto** en tu IDE favorito (por ejemplo, IntelliJ IDEA o Eclipse).
