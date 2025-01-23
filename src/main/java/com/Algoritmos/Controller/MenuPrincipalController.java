@@ -1,17 +1,19 @@
 package com.Algoritmos.Controller;
 
+import com.Algoritmos.Model.Algorithm;
+import com.Algoritmos.Model.FileProcessor;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.List;
 
 public class MenuPrincipalController extends Application {
 
@@ -29,7 +31,23 @@ public class MenuPrincipalController extends Application {
 
     @FXML
     public void calc() {
-        // tenemos que abrir una nueva ventana con los resultados
+        int x = Integer.parseInt(textFieldX.getText());
+        int y = Integer.parseInt(textFieldY.getText());
+        int queens = Integer.parseInt(textFieldReinas.getText());
+
+        if(x != y) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Tamaño del tablero inválido");
+            alert.setContentText("El tablero debe de ser cuadrado. Por favor, intentelo de nuevo");
+            alert.showAndWait();
+        } else {
+            int table[][] = new int[x][y];
+            Algorithm.backtracking(table, queens);
+            List<int[][]> solutions = Algorithm.getSolutions();
+            FileProcessor.createSolutionFile(solutions, x, y, queens);
+        }
+
     }
 
     public static void main(String[] args) {

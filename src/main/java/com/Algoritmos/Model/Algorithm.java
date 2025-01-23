@@ -1,8 +1,17 @@
 package com.Algoritmos.Model;
 
+import java.util.ArrayList;
+
 public class Algorithm {
 
+    private static ArrayList<int[][]> solutionTable = new ArrayList<>();
+
+    public static ArrayList<int[][]> getSolutions() {
+        return solutionTable;
+    }
+
     public static void backtracking(int table[][], int queens) {
+        solutionTable.clear();
         backtrack(table, 0, queens);
     }
 
@@ -10,6 +19,13 @@ public class Algorithm {
 
         if (row == queens) {
             printTable(table);
+
+            int[][] tableCopy = new int[table.length][table[0].length];
+            for (int i = 0; i < table.length; i++) {
+                tableCopy[i] = table[i].clone();
+            }
+
+            solutionTable.add(tableCopy);
             return;
         }
 
