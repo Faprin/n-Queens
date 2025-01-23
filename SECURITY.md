@@ -17,8 +17,4 @@ Aunque el software está bajo la Licencia MIT, es importante tener en cuenta las
 - **Mantenimiento**: Como el proyecto está disponible bajo la Licencia MIT, puede ser modificado y adaptado por otros. Sin embargo, las actualizaciones de seguridad y mejoras no están garantizadas por los autores originales del proyecto.
 - **Uso de dependencias**: Si el proyecto utiliza dependencias externas, es recomendable verificar que esas dependencias estén actualizadas y no contengan vulnerabilidades conocidas.
 
-## Contacto
-
-Si tienes alguna pregunta sobre la seguridad del código o el cumplimiento de la Licencia MIT, no dudes en contactarnos.
-
 
